@@ -1,0 +1,20 @@
+{
+  "name": "femtopixel/nano-framework",
+  "version": "0.1.0",
+  "description": "Nano Framework - easier than easiest things",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jay MOULIN",
+      "email": "jaymoulin@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nano\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^5.3 || ^7.0"
+  }
+}
