@@ -23,13 +23,13 @@ That's all!
 
 With that on, you can now access to your pages like this :
 
-http://mysite.tld/<controller>/<action>
+http://mysite.tld/ \<controller>/\<action>
 
-And it will load the class \Project\Controller\<controller>::<action>Action
+And it will load the class \Project\Controller\\\<controller>::\<action>Action
 
 You can easily configure your namespace, controller package and action suffix!
 
-Either <controller> or <action> are optionnal and considered as 'index' if not defined.
+Either \<controller> or \<action> are optional and considered as 'index' if not defined.
 
 Therefore
 
