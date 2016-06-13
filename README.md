@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/femtopixel/nano-framework/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
+[![Build status](https://travis-ci.org/femtopixel/nano-framework.svg)](https://travis-ci.org/femtopixel/nano-framework)
+[![Code Climate](https://codeclimate.com/github/femtopixel/nano-framework/badges/gpa.svg)](https://codeclimate.com/github/femtopixel/nano-framework)
+[![License](https://poser.pugx.org/femtopixel/nano-framework/license)](https://packagist.org/packages/femtopixel/nano-framework)
+
 # Nano Framework
 easier than easiest things
 

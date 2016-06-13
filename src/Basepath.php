@@ -13,11 +13,10 @@ class Basepath
         for ($i = 1; $i <= $length; $i++) {
             $currentBasePath = substr($uri, 0, $i);
             $found = strpos($documentRoot, $currentBasePath);
-            if ($found !== false) {
-                $basePath = $currentBasePath;
-            } else {
+            if ($found === false) {
                 break;
             }
+            $basePath = $currentBasePath;
         }
         $length = strlen($basePath) - 1;
         if ($basePath{$length} != '/') {

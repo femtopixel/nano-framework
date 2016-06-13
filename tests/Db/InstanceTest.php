@@ -13,15 +13,15 @@ class InstanceTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstruct()
     {
-        $driver = new \ReflectionProperty(\Nano\Db\Instance::class, 'driver');
+        $driver = new \ReflectionProperty('\Nano\Db\Instance', 'driver');
         $driver->setAccessible(true);
-        $host = new \ReflectionProperty(\Nano\Db\Instance::class, 'host');
+        $host = new \ReflectionProperty('\Nano\Db\Instance', 'host');
         $host->setAccessible(true);
-        $dbName = new \ReflectionProperty(\Nano\Db\Instance::class, 'dbName');
+        $dbName = new \ReflectionProperty('\Nano\Db\Instance', 'dbName');
         $dbName->setAccessible(true);
-        $username = new \ReflectionProperty(\Nano\Db\Instance::class, 'username');
+        $username = new \ReflectionProperty('\Nano\Db\Instance', 'username');
         $username->setAccessible(true);
-        $password = new \ReflectionProperty(\Nano\Db\Instance::class, 'password');
+        $password = new \ReflectionProperty('\Nano\Db\Instance', 'password');
         $password->setAccessible(true);
 
         $instance = new \Nano\Db\Instance();
@@ -41,11 +41,11 @@ class InstanceTest extends \PHPUnit_Framework_TestCase
 
     public function testExecute()
     {
-        $pdoMock = $this->getMockBuilder(\Pdo::class)
+        $pdoMock = $this->getMockBuilder('\Pdo')
             ->disableOriginalConstructor()
             ->setMethods(array('__construct', 'setAttribute', 'prepare'))
             ->getMock();
-        $statementMock = $this->getMockBuilder(\PDOStatement::class)
+        $statementMock = $this->getMockBuilder('\PDOStatement')
             ->setMethods(array('execute', 'fetchAll', 'newPdo'))
             ->getMock();
         $statementMock->expects($this->exactly(2))->method('execute')
@@ -54,7 +54,7 @@ class InstanceTest extends \PHPUnit_Framework_TestCase
         $pdoMock->expects($this->exactly(2))->method('prepare')
             ->withConsecutive(array($this->equalTo('sql')), array($this->equalTo('sql')))
             ->willReturn($statementMock);
-        $instanceMock = $this->getMockBuilder(\Nano\Db\Instance::class)
+        $instanceMock = $this->getMockBuilder('\Nano\Db\Instance')
             ->setConstructorArgs(array('driver', 'host', 'dbName', 'username', 'password'))
             ->setMethods(array('newPdo'))
             ->getMock();

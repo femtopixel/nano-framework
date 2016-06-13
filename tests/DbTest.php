@@ -16,15 +16,15 @@ class DbTest extends \PHPUnit_Framework_TestCase
                 'password' => 'password'
             )
         );
-        $driver = new \ReflectionProperty(\Nano\Db\Instance::class, 'driver');
+        $driver = new \ReflectionProperty('\Nano\Db\Instance', 'driver');
         $driver->setAccessible(true);
-        $host = new \ReflectionProperty(\Nano\Db\Instance::class, 'host');
+        $host = new \ReflectionProperty('\Nano\Db\Instance', 'host');
         $host->setAccessible(true);
-        $dbName = new \ReflectionProperty(\Nano\Db\Instance::class, 'dbName');
+        $dbName = new \ReflectionProperty('\Nano\Db\Instance', 'dbName');
         $dbName->setAccessible(true);
-        $username = new \ReflectionProperty(\Nano\Db\Instance::class, 'username');
+        $username = new \ReflectionProperty('\Nano\Db\Instance', 'username');
         $username->setAccessible(true);
-        $password = new \ReflectionProperty(\Nano\Db\Instance::class, 'password');
+        $password = new \ReflectionProperty('\Nano\Db\Instance', 'password');
         $password->setAccessible(true);
         $this->assertSame('driver', $driver->getValue($index[0]));
         $this->assertSame('host', $host->getValue($index[0]));
