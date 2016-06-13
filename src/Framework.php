@@ -1,7 +1,6 @@
 <?php
 namespace Nano;
 
-
 final class Framework
 {
     private $projectNamespace = '\Project';
@@ -25,21 +24,35 @@ final class Framework
         $controller->$action();
     }
 
+    /**
+     * @param string $namespace
+     * @return $this
+     */
     public function setNamespace($namespace = '\Project')
     {
-        $this->projectNamespace = $namespace{0} != '\\' ? '\\' . $namespace : $namespace;
+        $this->projectNamespace = strlen($namespace) && $namespace{0} != '\\' ? '\\' . $namespace : $namespace;
         return $this;
     }
 
+    /**
+     * @param string $controllerPackage
+     * @return $this
+     */
     public function setControllerPackage($controllerPackage = '\Controller')
     {
-        $this->controllerPackage = $controllerPackage{0} != '\\' ? '\\' . $controllerPackage : $controllerPackage;
+        $this->controllerPackage = strlen($controllerPackage) && $controllerPackage{0} != '\\'
+            ? '\\' . $controllerPackage
+            : $controllerPackage;
         return $this;
     }
 
+    /**
+     * @param string $suffix
+     * @return $this
+     */
     public function setControllerActionSuffix($suffix = 'Action')
     {
-        $this->controllerActionSuffix = (string) $suffix;
+        $this->controllerActionSuffix = (string)$suffix;
         return $this;
     }
 }

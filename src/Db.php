@@ -3,9 +3,14 @@ namespace Nano;
 
 class Db
 {
-    static private $instances = array();
+    private static $instances = array();
 
-    static public function getInstance($name, array $params = null)
+    /**
+     * @param string $name
+     * @param array|null $params
+     * @return Db\Instance
+     */
+    public static function getInstance($name, array $params = null)
     {
         if (!isset(self::$instances[$name])) {
             self::$instances[$name] = new Db\Instance(
