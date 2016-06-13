@@ -41,11 +41,10 @@ class InstanceTest extends \PHPUnit_Framework_TestCase
 
     public function testExecute()
     {
-        $pdoMock = $this->getMockBuilder('\Pdo')
-            ->disableOriginalConstructor()
-            ->setMethods(array('__construct', 'setAttribute', 'prepare'))
+        $pdoMock = $this->getMockBuilder('\stdClass')
+            ->setMethods(array('setAttribute', 'prepare'))
             ->getMock();
-        $statementMock = $this->getMockBuilder('\PDOStatement')
+        $statementMock = $this->getMockBuilder('\stdClass')
             ->setMethods(array('execute', 'fetchAll', 'newPdo'))
             ->getMock();
         $statementMock->expects($this->exactly(2))->method('execute')
