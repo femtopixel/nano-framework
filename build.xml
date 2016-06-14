@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="FMUP" default="ci" basedir=".">
+<project name="Nano" default="ci" basedir=".">
     <property name="isUnix" value="0" />
     <condition property="isUnix" value="1">
         <os family="Unix" />
@@ -60,7 +60,7 @@
     </target>
 
     <target name="phpdoc" depends="clean_doc">
-        <phpdoc2 title="FMUP Documentation" destdir="${project.basedir}/documentation/doc" template="clean">
+        <phpdoc2 title="Nano Documentation" destdir="${project.basedir}/documentation/doc" template="clean">
             <fileset dir="${project.basedir}">
                 <include name="src/**/*.php"/>
                 <include name="src/*.php"/>
@@ -89,7 +89,7 @@
     </target>
 
     <target name="phploc">
-        <exec logoutput="true" dir="${project.basedir}" command='"${project.basedir}/vendor/bin/phploc" --log-csv "${project.basedir}/build/logs/phploc.csv" lib' escape="false" />
+        <exec logoutput="true" dir="${project.basedir}" command='"${project.basedir}/vendor/bin/phploc" --log-csv "${project.basedir}/build/logs/phploc.csv" src' escape="false" />
     </target>
 
     <target name="pdepend">
