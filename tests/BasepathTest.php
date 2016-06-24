@@ -1,5 +1,5 @@
 <?php
-namespace Tests;
+namespace Nano\Tests;
 
 class BasepathTest extends \PHPUnit_Framework_TestCase
 {

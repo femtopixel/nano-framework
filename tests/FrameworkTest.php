@@ -37,7 +37,7 @@ namespace OtherNamespace {
         }
     }
 }
-namespace Tests {
+namespace Nano\Tests {
 
     class FrameworkTest extends \PHPUnit_Framework_TestCase
     {

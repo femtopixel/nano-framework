@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jmoulin
- * Date: 13/06/2016
- * Time: 16:17
- */
-
-namespace Tests\Db;
-
+namespace Nano\Tests\Db;
 
 class InstanceTest extends \PHPUnit_Framework_TestCase
 {

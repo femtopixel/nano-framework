@@ -1,6 +1,6 @@
 {
   "name": "femtopixel/nano-framework",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Nano Framework - easier than easiest things",
   "license": "MIT",
   "authors": [
@@ -14,14 +14,25 @@
       "Nano\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Nano\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit",
+    "phpcs": "phpcs src --standard=PSR2 --report-checkstyle=build/logs/checkstyle.xml",
+    "phploc": "phploc src --log-csv build/logs/phploc.csv",
+    "phpmd": "phpmd src xml codesize,controversial,cleancode,design,naming,unusedcode --reportfile build/logs/checkstyle.xml",
+    "phpcpd": "phpcpd src --log-pmd=build/logs/cpd.xml",
+    "phpdoc": "phpdoc -d src -t docs --template clean"
+  },
   "require": {
     "php": "^5.3 || ^7.0"
   },
   "require-dev": {
-    "phing/phing": "^2.14",
     "phpunit/phpunit": "^4.0",
     "squizlabs/php_codesniffer": "^2.6",
-    "pdepend/pdepend": "^2.2",
     "phpmd/phpmd": "^2.4",
     "sebastian/phpcpd": "^2.0",
     "phploc/phploc": "^2.0",

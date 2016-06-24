@@ -6,4 +6,9 @@ php:
   - '5.6'
   - '7.0'
 install: composer install
-script: vendor/bin/phing ci
+script:
+  - composer phpunit
+  - composer phpcs
+  - composer phploc
+  - composer phpcpd
+  - composer phpmd
