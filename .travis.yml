@@ -6,8 +6,8 @@ php:
   - '5.6'
   - '7.0'
 install: composer install
-script:
-  - composer phpunit
+script: composer phpunit
+after_script:
   - composer phpcs
   - composer phploc
   - composer phpcpd
