@@ -1,7 +1,8 @@
 {
   "name": "femtopixel/nano-framework",
   "version": "0.3.4",
-  "description": "Nano Framework - easier than easiest things",
+  "description": "Nano Framework - easier than easiest framework",
+  "keywords":["framework", "easy", "performant", "lightweight", "simple", "MVC"],
   "license": "MIT",
   "authors": [
     {

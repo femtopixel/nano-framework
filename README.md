@@ -11,7 +11,7 @@
 
 Nano Framework
 ===
-easier than easiest things
+Nano is a simple stupid framework, really easy to handle, and really performant.
 
 Installation
 ---
