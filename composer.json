@@ -2,14 +2,20 @@
   "name": "femtopixel/nano-framework",
   "version": "0.3.4",
   "description": "Nano Framework - easier than easiest framework",
-  "keywords":["framework", "easy", "performant", "lightweight", "simple", "MVC"],
+  "keywords":["framework", "easy", "performant", "lightweight", "simple", "MVC", "PHP 7", "PHP 5.3"],
   "license": "MIT",
+  "homepage": "http://femtopixel.github.io/nano-framework",
   "authors": [
     {
       "name": "Jay MOULIN",
-      "email": "jaymoulin@gmail.com"
+      "email": "jaymoulin@gmail.com",
+      "homepage": "http://github.com/jaymoulin"
     }
   ],
+  "support": {
+      "issues": "http://github.com/femtopixel/nano-framework/issues",
+      "source": "https://github.com/femtopixel/nano-framework"
+  },
   "autoload": {
     "psr-4": {
       "Nano\\": "src/"
