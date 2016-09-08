@@ -31,7 +31,7 @@ from within your folder:
 
     composer phpcs
 
-Check the ``build/logs/checkstyle.xml`` once it finished.
+Check the `build/logs/checkstyle.xml` once it finished.
 
 Additional Resources
 --------------------

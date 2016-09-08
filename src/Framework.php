@@ -1,12 +1,20 @@
 <?php
 namespace Nano;
 
+/**
+ * Class Framework
+ * @package Nano
+ */
 final class Framework
 {
     private $projectNamespace = '\Project';
     private $controllerPackage = '\Controller';
     private $controllerActionSuffix = 'Action';
 
+    /**
+     * Dispatch the request
+     * @throws \Exception
+     */
     public function dispatch()
     {
         $globb = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $_SERVER['REQUEST_URI']));
@@ -25,6 +33,7 @@ final class Framework
     }
 
     /**
+     * Redefine personal namespace
      * @param string $namespace
      * @return $this
      */
@@ -35,6 +44,7 @@ final class Framework
     }
 
     /**
+     * Redefine controller subpackage
      * @param string $controllerPackage
      * @return $this
      */
@@ -47,6 +57,7 @@ final class Framework
     }
 
     /**
+     * Redefine controller action suffix
      * @param string $suffix
      * @return $this
      */

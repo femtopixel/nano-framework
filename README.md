@@ -13,12 +13,12 @@ Nano Framework
 ===
 Nano is a simple stupid framework, really easy to handle, and really performant.
 
+It implements the MVC design pattern
+
 Installation
 ---
 
-```
-composer require femtopixel/nano-framework
-```
+    composer require femtopixel/nano-framework
 
 Bootstrap
 ---
@@ -48,8 +48,8 @@ Either \<controller> or \<action> are optional and considered as 'index' if not 
 
 Therefore
 
-url | class::method
---- | -------------
-http://mysite.tld/ | \Project\Controller\Index::indexAction
-http://mysite.tld/test | \Project\Controller\Test::indexAction
+url                           | class::method
+----------------------------- | ---------------------------------------
+http://mysite.tld/            | \Project\Controller\Index::indexAction
+http://mysite.tld/test        | \Project\Controller\Test::indexAction
 http://mysite.tld/test/action | \Project\Controller\Test::actionAction
