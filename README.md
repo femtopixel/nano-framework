@@ -13,7 +13,7 @@ Nano Framework
 ===
 Nano is a simple stupid framework, really easy to handle, and really performant.
 
-It implements the MVC design pattern
+It only implements the C part (Controller) of the MVC design pattern which allows developers to use any other existing library for others parts
 
 Installation
 ---
@@ -28,7 +28,8 @@ all your request can be redirected to your bootstrap (assuming index.php)
 ```php
 <?php
 require_once ('vendor/autoload.php');
-(new \Nano\Framework())->dispatch();
+$nano = new \Nano\Framework();
+$nano->dispatch();
 ```
 
 That's all!
@@ -48,8 +49,9 @@ Either \<controller> or \<action> are optional and considered as 'index' if not 
 
 Therefore
 
-url                           | class::method
------------------------------ | ---------------------------------------
-http://mysite.tld/            | \Project\Controller\Index::indexAction
-http://mysite.tld/test        | \Project\Controller\Test::indexAction
-http://mysite.tld/test/action | \Project\Controller\Test::actionAction
+url                                        | class::method
+------------------------------------------ | ---------------------------------------
+http://mysite.tld/                         | \Project\Controller\Index::indexAction
+http://mysite.tld/test                     | \Project\Controller\Test::indexAction
+http://mysite.tld/test/action              | \Project\Controller\Test::actionAction
+http://mysite.tld/also/work/with/full/path | \Project\Controller\Also\Work\With\Full::pathAction

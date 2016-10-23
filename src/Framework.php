@@ -17,9 +17,12 @@ final class Framework
      */
     public function dispatch()
     {
-        $globb = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $_SERVER['REQUEST_URI']));
-        $controllerName = isset($globb[0]) && $globb[0] ? $globb[0] : 'index';
-        $action = isset($globb[1]) && $globb[1] ? $globb[1] : 'index';
+        $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $_SERVER['REQUEST_URI']));
+        $action = count($parts) >= 2 ? array_pop($parts) : 'index';
+        if (!$action) {
+            $action = 'index';
+        }
+        $controllerName = isset($parts[0]) && $parts[0] ? implode($parts, '\\') : 'index';
         $controller = $this->projectNamespace . $this->controllerPackage . '\\' . ucfirst($controllerName);
         if (!class_exists($controller)) {
             throw new \Exception('controller ' . $controllerName . ' not found');

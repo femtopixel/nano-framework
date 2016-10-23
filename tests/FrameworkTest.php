@@ -18,8 +18,8 @@ namespace Project\OtherSub {
         }
     }
 }
-namespace OtherNamespace\OtherSub {
-
+namespace OtherNamespace\OtherSub
+{
     class Routing
     {
         public function testAction()
@@ -28,7 +28,8 @@ namespace OtherNamespace\OtherSub {
         }
     }
 }
-namespace OtherNamespace {
+namespace OtherNamespace
+{
     class Route
     {
         public function actionThatHasOtherSuffix()
@@ -37,6 +38,18 @@ namespace OtherNamespace {
         }
     }
 }
+
+namespace OtherNamespace\Recursive
+{
+    class Recursive
+    {
+        public function actionWithNoSuffix()
+        {
+            echo "Working5";
+        }
+    }
+}
+
 namespace Nano\Tests {
 
     class FrameworkTest extends \PHPUnit_Framework_TestCase
@@ -113,6 +126,18 @@ namespace Nano\Tests {
             $nano->setNamespace('\OtherNamespace')
                 ->setControllerPackage('')
                 ->setControllerActionSuffix('OtherSuffix')
+                ->dispatch();
+        }
+
+        public function testDispatchSuccessWhenOtherSubPackageAndNoSuffixAndRecursivePath()
+        {
+            $_SERVER['REQUEST_URI'] = '/recursive/recursive/actionwithnosuffix';
+            $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
+            $this->expectOutputString("Working5");
+            $nano = new \Nano\Framework();
+            $nano->setNamespace('\OtherNamespace')
+                ->setControllerPackage('')
+                ->setControllerActionSuffix('')
                 ->dispatch();
         }
     }

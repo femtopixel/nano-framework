@@ -1,7 +1,7 @@
 {
   "name": "femtopixel/nano-framework",
   "description": "Nano Framework - easier than easiest framework",
-  "keywords":["nano", "framework", "easy", "performant", "lightweight", "simple", "MVC", "PHP 7", "PHP 5.3"],
+  "keywords":["nano", "framework", "easy", "performant", "lightweight", "simple", "MVC", "quickstart", "PHP 7", "PHP 5.3"],
   "license": "MIT",
   "homepage": "http://femtopixel.github.io/nano-framework",
   "authors": [
