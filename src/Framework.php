@@ -14,10 +14,14 @@ final class Framework
     /**
      * Dispatch the request
      * @throws \Exception
+     * @return mixed
      */
     public function dispatch()
     {
-        $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $_SERVER['REQUEST_URI']));
+        $requestUri = $_SERVER['REQUEST_URI'];
+        $appendUri = strpos($requestUri, '?');
+        $query = substr($requestUri, 0, $appendUri === false ? strlen($requestUri) : $appendUri);
+        $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $query));
         $action = count($parts) >= 2 ? array_pop($parts) : 'index';
         if (!$action) {
             $action = 'index';
@@ -32,7 +36,7 @@ final class Framework
         if (!is_callable(array($controller, $action))) {
             throw new \Exception('action ' . $action . ' not found in controller ' . $controllerName);
         }
-        $controller->$action();
+        return $controller->$action();
     }
 
     /**
