@@ -1,7 +1,7 @@
 <?php
 namespace Nano\Tests;
 
-class BasepathTest extends \PHPUnit_Framework_TestCase
+class BasepathTest extends \PHPUnit\Framework\TestCase
 {
     public function testGet()
     {

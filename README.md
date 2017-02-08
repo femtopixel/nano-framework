@@ -1,5 +1,4 @@
 [![Latest Stable Version](https://poser.pugx.org/femtopixel/nano-framework/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.3-8892BF.svg?style=flat-square)](https://php.net/)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-square)](https://php.net/)
 [![Build status](https://travis-ci.org/femtopixel/nano-framework.svg)](https://travis-ci.org/femtopixel/nano-framework)
 [![Code Climate](https://codeclimate.com/github/femtopixel/nano-framework/badges/gpa.svg)](https://codeclimate.com/github/femtopixel/nano-framework)
@@ -11,7 +10,7 @@
 
 Nano Framework
 ===
-Nano is a simple stupid framework, really easy to handle, and really performant.
+Nano is a simple stupid framework, really easy to handle, and really efficient.
 
 It only implements the C part (Controller) of the MVC design pattern which allows developers to use any other existing library for others parts
 

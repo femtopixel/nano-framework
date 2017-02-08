@@ -52,13 +52,14 @@ namespace OtherNamespace\Recursive
 
 namespace Nano\Tests {
 
-    class FrameworkTest extends \PHPUnit_Framework_TestCase
+    class FrameworkTest extends \PHPUnit\Framework\TestCase
     {
         public function testDispatchFailDefault()
         {
             $_SERVER['REQUEST_URI'] = '/';
             $_SERVER['SCRIPT_FILENAME'] = '/var/www/controller/index.php';
-            $this->setExpectedException('\Exception', 'controller index not found');
+            $this->expectException(\Exception::class);
+            $this->expectExceptionMessage('controller index not found');
             $nano = new \Nano\Framework();
             $nano->dispatch();
         }
@@ -67,7 +68,8 @@ namespace Nano\Tests {
         {
             $_SERVER['REQUEST_URI'] = '/controller';
             $_SERVER['SCRIPT_FILENAME'] = '/var/www/controller/index.php';
-            $this->setExpectedException('\Exception', 'controller index not found');
+            $this->expectException(\Exception::class);
+            $this->expectExceptionMessage('controller index not found');
             $nano = new \Nano\Framework();
             $nano->dispatch();
         }
@@ -76,7 +78,8 @@ namespace Nano\Tests {
         {
             $_SERVER['REQUEST_URI'] = '/controller';
             $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
-            $this->setExpectedException('\Exception', 'controller controller not found');
+            $this->expectException(\Exception::class);
+            $this->expectExceptionMessage('controller controller not found');
             $nano = new \Nano\Framework();
             $nano->dispatch();
         }
@@ -85,7 +88,8 @@ namespace Nano\Tests {
         {
             $_SERVER['REQUEST_URI'] = '/controllerOk';
             $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
-            $this->setExpectedException('\Exception', 'action indexAction not found in controller controllerOk');
+            $this->expectException(\Exception::class);
+            $this->expectExceptionMessage('action indexAction not found in controller controllerOk');
             $nano = new \Nano\Framework();
             $nano->dispatch();
         }

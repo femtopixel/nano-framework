@@ -1,7 +1,7 @@
 {
   "name": "femtopixel/nano-framework",
   "description": "Nano Framework - easier than easiest framework",
-  "keywords":["nano", "framework", "easy", "performant", "lightweight", "simple", "MVC", "quickstart", "PHP 7", "PHP 5.3"],
+  "keywords":["nano", "framework", "easy", "efficient", "lightweight", "simple", "MVC", "quickstart", "PHP 7"],
   "license": "MIT",
   "homepage": "http://femtopixel.github.io/nano-framework",
   "authors": [
@@ -34,15 +34,15 @@
     "phpdoc": "phpdoc -d src -t docs --template clean"
   },
   "require": {
-    "php": "^5.3 || ^7.0"
+    "php": "^7.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.0 || ^5.0",
+    "phpunit/phpunit": "^6.0",
     "squizlabs/php_codesniffer": "^2.6",
     "phpmd/phpmd": "^2.4",
     "sebastian/phpcpd": "^2.0",
-    "phploc/phploc": "^2.0 || ^3.0",
+    "phploc/phploc": "^3.0",
     "phpdocumentor/phpdocumentor": "^2.8",
-    "codeclimate/php-test-reporter": "dev-master"
+    "codeclimate/php-test-reporter": "^0.4"
   }
 }

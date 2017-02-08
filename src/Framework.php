@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace Nano;
 
 /**
@@ -42,9 +44,9 @@ final class Framework
     /**
      * Redefine personal namespace
      * @param string $namespace
-     * @return $this
+     * @return Framework
      */
-    public function setNamespace($namespace = '\Project')
+    public function setNamespace(string $namespace = '\Project') : Framework
     {
         $this->projectNamespace = strlen($namespace) && $namespace{0} != '\\' ? '\\' . $namespace : $namespace;
         return $this;
@@ -53,9 +55,9 @@ final class Framework
     /**
      * Redefine controller subpackage
      * @param string $controllerPackage
-     * @return $this
+     * @return Framework
      */
-    public function setControllerPackage($controllerPackage = '\Controller')
+    public function setControllerPackage(string $controllerPackage = '\Controller') : Framework
     {
         $this->controllerPackage = strlen($controllerPackage) && $controllerPackage{0} != '\\'
             ? '\\' . $controllerPackage
@@ -66,9 +68,9 @@ final class Framework
     /**
      * Redefine controller action suffix
      * @param string $suffix
-     * @return $this
+     * @return Framework
      */
-    public function setControllerActionSuffix($suffix = 'Action')
+    public function setControllerActionSuffix(string $suffix = 'Action') : Framework
     {
         $this->controllerActionSuffix = (string)$suffix;
         return $this;

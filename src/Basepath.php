@@ -1,9 +1,11 @@
 <?php
+declare(strict_types = 1);
+
 namespace Nano;
 
 class Basepath
 {
-    public static function get()
+    public static function get() : string
     {
         $scriptName = $_SERVER['SCRIPT_FILENAME'];
         $documentRoot = str_replace(basename($scriptName), '', $scriptName);
