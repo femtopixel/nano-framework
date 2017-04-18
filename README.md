@@ -1,12 +1,9 @@
-[![Latest Stable Version](https://poser.pugx.org/femtopixel/nano-framework/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
+[![Latest Stable Version](https://poser.pugx.org/femtopixel/crop/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-square)](https://php.net/)
-[![Build status](https://travis-ci.org/femtopixel/nano-framework.svg)](https://travis-ci.org/femtopixel/nano-framework)
-[![Code Climate](https://codeclimate.com/github/femtopixel/nano-framework/badges/gpa.svg)](https://codeclimate.com/github/femtopixel/nano-framework)
-[![Test Coverage](https://codeclimate.com/github/femtopixel/nano-framework/badges/coverage.svg)](https://codeclimate.com/github/femtopixel/nano-framework/coverage)
-[![Issue Count](https://codeclimate.com/github/femtopixel/nano-framework/badges/issue_count.svg)](https://codeclimate.com/github/femtopixel/nano-framework)
-[![Dependency Status](https://www.versioneye.com/user/projects/575f150d7757a0004a1df17f/badge.svg?style=flat)](https://www.versioneye.com/user/projects/575f150d7757a0004a1df17f)
+[![Build Status](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
 [![License](https://poser.pugx.org/femtopixel/nano-framework/license)](https://packagist.org/packages/femtopixel/nano-framework)
-
 
 Nano Framework
 ===
