@@ -1,6 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/femtopixel/crop/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-square)](https://php.net/)
 [![Build Status](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/femtopixel/nano-framework/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-square)](https://php.net/)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
 [![License](https://poser.pugx.org/femtopixel/nano-framework/license)](https://packagist.org/packages/femtopixel/nano-framework)
