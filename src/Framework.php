@@ -20,22 +20,53 @@ final class Framework
      */
     public function dispatch()
     {
-        $requestUri = $_SERVER['REQUEST_URI'];
-        $appendUri = strpos($requestUri, '?');
-        $query = substr($requestUri, 0, $appendUri === false ? strlen($requestUri) : $appendUri);
-        $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $query));
-        $action = count($parts) >= 2 ? array_pop($parts) : 'index';
-        $controllerName = isset($parts[0]) && $parts[0] ? implode($parts, '\\') : 'index';
+        list($controllerName, $action) = $this->getControllerAndAction();
         $controller = $this->projectNamespace . $this->controllerPackage . '\\' . ucfirst($controllerName);
         if (!class_exists($controller)) {
             throw new \Exception('controller ' . $controllerName . ' not found');
         };
         $controller = new $controller;
-        $action = ($action ?: 'index') . $this->controllerActionSuffix;
-        if (!is_callable(array($controller, $action))) {
-            throw new \Exception('action ' . $action . ' not found in controller ' . $controllerName);
+        $finalAction = $this->getVerbFromRequest() . ucfirst($action) . $this->controllerActionSuffix;
+        if (is_callable(array($controller, $finalAction))) {
+            return $controller->$finalAction();
         }
-        return $controller->$action();
+        $finalAction = $action . $this->controllerActionSuffix;
+        if (!is_callable(array($controller, $finalAction))) {
+            throw new \Exception('action ' . $finalAction . ' not found in controller ' . $controllerName);
+        }
+        return $controller->$finalAction();
+    }
+
+    /**
+     * Return HTTP Method for request
+     * @return string
+     */
+    private function getVerbFromRequest()
+    {
+        return isset($_SERVER['REQUEST_METHOD']) ? strtolower($_SERVER['REQUEST_METHOD']) : 'get';
+    }
+
+    /**
+     * Returns Request uri without query string
+     * @return string
+     */
+    private function getQuery() : string
+    {
+        $requestUri = $_SERVER['REQUEST_URI'];
+        $appendUri = strpos($requestUri, '?');
+        return substr($requestUri, 0, $appendUri === false ? strlen($requestUri) : $appendUri);
+    }
+
+    /**
+     * Determine controller and action from Request Uri
+     * @return array
+     */
+    private function getControllerAndAction() : array
+    {
+        $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $this->getQuery()));
+        $action = count($parts) >= 2 ? array_pop($parts) : 'index';
+        $controllerName = isset($parts[0]) && $parts[0] ? implode($parts, '\\') : 'index';
+        return [$controllerName, $action ?: 'index'];
     }
 
     /**

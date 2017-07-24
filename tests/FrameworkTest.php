@@ -47,6 +47,11 @@ namespace OtherNamespace\Recursive
         {
             echo "Working5";
         }
+
+        public function postActionWithNoSuffix()
+        {
+            echo "Working6";
+        }
     }
 }
 
@@ -138,6 +143,19 @@ namespace Nano\Tests {
             $_SERVER['REQUEST_URI'] = '/recursive/recursive/actionwithnosuffix';
             $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
             $this->expectOutputString("Working5");
+            $nano = new \Nano\Framework();
+            $nano->setNamespace('\OtherNamespace')
+                ->setControllerPackage('')
+                ->setControllerActionSuffix('')
+                ->dispatch();
+        }
+
+        public function testDispatchSuccessWhenOtherSubPackageAndNoSuffixAndRecursivePathWithPost()
+        {
+            $_SERVER['REQUEST_URI'] = '/recursive/recursive/actionwithnosuffix';
+            $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
+            $_SERVER['REQUEST_METHOD'] = 'POST';
+            $this->expectOutputString("Working6");
             $nano = new \Nano\Framework();
             $nano->setNamespace('\OtherNamespace')
                 ->setControllerPackage('')

@@ -37,9 +37,10 @@ With that on, you can now access to your pages like this :
 
 http://mysite.tld/ \<controller>/\<action>
 
-And it will load the class \Project\Controller\\\<controller>::\<action>Action
+And it will load the class \Project\Controller\\\<controller>::\<method>\<action>Action
 
 You can easily configure your namespace, controller package and action suffix!
+*\<method>* represents the HTTP method used (usually *get* but you can use post/update/delete etc...). This is optional.
 
 Either \<controller> or \<action> are optional and considered as 'index' if not defined.
 
