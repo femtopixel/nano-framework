@@ -25,16 +25,13 @@ final class Framework
         $query = substr($requestUri, 0, $appendUri === false ? strlen($requestUri) : $appendUri);
         $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $query));
         $action = count($parts) >= 2 ? array_pop($parts) : 'index';
-        if (!$action) {
-            $action = 'index';
-        }
         $controllerName = isset($parts[0]) && $parts[0] ? implode($parts, '\\') : 'index';
         $controller = $this->projectNamespace . $this->controllerPackage . '\\' . ucfirst($controllerName);
         if (!class_exists($controller)) {
             throw new \Exception('controller ' . $controllerName . ' not found');
         };
         $controller = new $controller;
-        $action = $action . $this->controllerActionSuffix;
+        $action = ($action ?: 'index') . $this->controllerActionSuffix;
         if (!is_callable(array($controller, $action))) {
             throw new \Exception('action ' . $action . ' not found in controller ' . $controllerName);
         }
