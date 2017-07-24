@@ -40,15 +40,18 @@ http://mysite.tld/ \<controller>/\<action>
 And it will load the class \Project\Controller\\\<controller>::\<method>\<action>Action
 
 You can easily configure your namespace, controller package and action suffix!
+
 *\<method>* represents the HTTP method used (usually *get* but you can use post/update/delete etc...). This is optional.
 
 Either \<controller> or \<action> are optional and considered as 'index' if not defined.
 
 Therefore
 
-url                                        | class::method
------------------------------------------- | ---------------------------------------
-http://mysite.tld/                         | \Project\Controller\Index::indexAction
-http://mysite.tld/test                     | \Project\Controller\Test::indexAction
-http://mysite.tld/test/action              | \Project\Controller\Test::actionAction
-http://mysite.tld/also/work/with/full/path | \Project\Controller\Also\Work\With\Full::pathAction
+url                                            | class::method
+---------------------------------------------- | ---------------------------------------
+http://mysite.tld/                             | \Project\Controller\Index::indexAction
+http://mysite.tld/test                         | \Project\Controller\Test::indexAction
+http://mysite.tld/test/action                  | \Project\Controller\Test::actionAction
+http://mysite.tld/also/work/with/full/path     | \Project\Controller\Also\Work\With\Full::pathAction
+http://mysite.tld/my/normal                    | \Project\Controller\My::getNormalAction
+http://mysite.tld/my/normal (with HTTP post)   | \Project\Controller\My::postNormalAction
