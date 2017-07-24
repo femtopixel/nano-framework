@@ -55,3 +55,32 @@ http://mysite.tld/test/action                  | \Project\Controller\Test::actio
 http://mysite.tld/also/work/with/full/path     | \Project\Controller\Also\Work\With\Full::pathAction
 http://mysite.tld/my/normal                    | \Project\Controller\My::getNormalAction
 http://mysite.tld/my/normal (with HTTP post)   | \Project\Controller\My::postNormalAction
+
+## Parameter Matching
+
+Since 0.6.0, you can use *"Parameter Matching"*
+
+Simply activate it when dispatching :
+
+```php
+require_once ('vendor/autoload.php');
+$nano = new \Nano\Framework();
+$nano->setParameterMatching->dispatch();
+``` 
+
+And then you'll be able to use it like this :
+
+```php
+<?php
+namespace \Project\Controller;
+
+class MyAwesomeController
+{
+    public function getHelloAction($age, $name)
+    {
+        echo "Hello $name, I'm {$age}yo"; //please, use this code for test only
+    }
+}
+```
+
+and call `http://mysite.tld/myawesomecontroller/hello?name=World&age=900` to display "Hello World, I'm 900yo" !

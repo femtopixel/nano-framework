@@ -52,6 +52,11 @@ namespace OtherNamespace\Recursive
         {
             echo "Working6";
         }
+
+        public function postActionWithParameterMatching($i = "a", $n = "b", $u = "c")
+        {
+            echo "Working with $u $n $i";
+        }
     }
 }
 
@@ -160,6 +165,39 @@ namespace Nano\Tests {
             $nano->setNamespace('\OtherNamespace')
                 ->setControllerPackage('')
                 ->setControllerActionSuffix('')
+                ->dispatch();
+        }
+
+        public function testDispatchSuccessWhenOtherSubPackageAndNoSuffixAndRecursivePathWithPostAndNoParameterMatching()
+        {
+            $_SERVER['REQUEST_URI'] = '/recursive/recursive/actionwithparametermatching';
+            $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
+            $_SERVER['REQUEST_METHOD'] = 'POST';
+            $this->expectOutputString("Working with c b a");
+            $nano = new \Nano\Framework();
+            $nano->setNamespace('\OtherNamespace')
+                ->setControllerPackage('')
+                ->setControllerActionSuffix('')
+                ->setParameterMatching()
+                ->dispatch();
+        }
+
+        public function testDispatchSuccessWhenOtherSubPackageAndNoSuffixAndRecursivePathWithPostAndParameterMatching()
+        {
+            $_SERVER['REQUEST_URI'] = '/recursive/recursive/actionwithparametermatching';
+            $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
+            $_SERVER['REQUEST_METHOD'] = 'POST';
+            $_REQUEST = [
+                'u' => 'You',
+                'i' => 'Me',
+                'n' => 'and',
+            ];
+            $this->expectOutputString("Working with You and Me");
+            $nano = new \Nano\Framework();
+            $nano->setNamespace('\OtherNamespace')
+                ->setControllerPackage('')
+                ->setControllerActionSuffix('')
+                ->setParameterMatching()
                 ->dispatch();
         }
     }
