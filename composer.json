@@ -30,18 +30,16 @@
     "phpcs": "phpcs src --standard=PSR2 --report-checkstyle=build/logs/checkstyle.xml",
     "phploc": "phploc src --log-csv build/logs/phploc.csv",
     "phpmd": "phpmd src xml codesize,controversial,cleancode,design,naming,unusedcode --reportfile build/logs/checkstyle.xml",
-    "phpcpd": "phpcpd src --log-pmd=build/logs/cpd.xml",
-    "phpdoc": "phpdoc -d src -t docs --template clean"
+    "phpcpd": "phpcpd src --log-pmd=build/logs/cpd.xml"
   },
   "require": {
     "php": "^7.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.0",
-    "squizlabs/php_codesniffer": "^2.6",
+    "squizlabs/php_codesniffer": "^3.0",
     "phpmd/phpmd": "^2.4",
-    "sebastian/phpcpd": "^2.0",
-    "phploc/phploc": "^3.0",
-    "phpdocumentor/phpdocumentor": "^2.8"
+    "sebastian/phpcpd": "^3.0",
+    "phploc/phploc": "^4.0"
   }
 }
