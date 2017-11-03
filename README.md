@@ -4,6 +4,8 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/?branch=master)
 [![License](https://poser.pugx.org/femtopixel/nano-framework/license)](https://packagist.org/packages/femtopixel/nano-framework)
+[![Bitcoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png "Bitcoin donation")](https://m.freewallet.org/id/374ad82e/btc)
+[![Litecoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ltc.png "Litecoin donation")](https://m.freewallet.org/id/374ad82e/ltc)
 
 Nano Framework
 ===
