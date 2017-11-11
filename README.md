@@ -1,3 +1,6 @@
+Nano Framework
+==============
+
 [![Build Status](https://scrutinizer-ci.com/g/femtopixel/nano-framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/femtopixel/nano-framework/build-status/master)
 [![Latest Stable Version](https://poser.pugx.org/femtopixel/nano-framework/v/stable)](https://packagist.org/packages/femtopixel/nano-framework) 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-square)](https://php.net/)
@@ -6,9 +9,9 @@
 [![License](https://poser.pugx.org/femtopixel/nano-framework/license)](https://packagist.org/packages/femtopixel/nano-framework)
 [![Bitcoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png "Bitcoin donation")](https://m.freewallet.org/id/374ad82e/btc)
 [![Litecoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ltc.png "Litecoin donation")](https://m.freewallet.org/id/374ad82e/ltc)
+[![PayPal donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ppl.png "PayPal donation")](https://www.paypal.me/jaymoulin)
+[![Beerpay donation](https://beerpay.io/femtopixel/nano-framework/badge.svg "Beerpay donation")](https://beerpay.io/femtopixel/nano-framework)
 
-Nano Framework
-===
 Nano is a simple stupid framework, really easy to handle, and really efficient.
 
 It only implements the C part (Controller) of the MVC design pattern which allows developers to use any other existing library for others parts
