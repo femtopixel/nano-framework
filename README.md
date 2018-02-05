@@ -69,7 +69,7 @@ Simply activate it when dispatching :
 ```php
 require_once ('vendor/autoload.php');
 $nano = new \Nano\Framework();
-$nano->setParameterMatching->dispatch();
+$nano->setParameterMatching()->dispatch();
 ``` 
 
 And then you'll be able to use it like this :
