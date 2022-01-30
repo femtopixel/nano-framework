@@ -21,7 +21,7 @@ class Basepath
             $basePath = $currentBasePath;
         }
         $length = strlen($basePath) - 1;
-        if ($basePath{$length} != '/') {
+        if ($basePath[$length] != '/') {
             $basePath .= '/';
         }
         return $basePath;

@@ -24,14 +24,14 @@ final class Framework
         list($controllerName, $action) = $this->getControllerAndAction();
         $controller = $this->getControllerFromName($controllerName);
         $finalAction = $this->getVerbFromRequest() . ucfirst($action) . $this->controllerActionSuffix;
-        if (is_callable(array($controller, $finalAction))) {
+        if (is_callable([$controller, $finalAction])) {
             return call_user_func_array(
                 [$controller, $finalAction],
                 $this->getParametersForMatching($controller, $finalAction)
             );
         }
         $finalAction = $action . $this->controllerActionSuffix;
-        if (!is_callable(array($controller, $finalAction))) {
+        if (!is_callable([$controller, $finalAction])) {
             throw new \Exception('action ' . $finalAction . ' not found in controller ' . $controllerName);
         }
         return call_user_func_array(
@@ -101,7 +101,7 @@ final class Framework
     {
         $parts = explode('/', preg_replace('~^' . Basepath::get() . '~', '', $this->getQuery()));
         $action = count($parts) >= 2 ? array_pop($parts) : 'index';
-        $controllerName = isset($parts[0]) && $parts[0] ? implode($parts, '\\') : 'index';
+        $controllerName = is_array($parts) && $parts[0] != '' ? implode('\\', $parts) : 'index';
         return [$controllerName, $action ?: 'index'];
     }
 
@@ -112,7 +112,7 @@ final class Framework
      */
     public function setNamespace(string $namespace = '\Project'): Framework
     {
-        $this->projectNamespace = strlen($namespace) && $namespace{0} != '\\' ? '\\' . $namespace : $namespace;
+        $this->projectNamespace = strlen($namespace) && $namespace[0] != '\\' ? '\\' . $namespace : $namespace;
         return $this;
     }
 
@@ -123,7 +123,7 @@ final class Framework
      */
     public function setControllerPackage(string $controllerPackage = '\Controller'): Framework
     {
-        $this->controllerPackage = strlen($controllerPackage) && $controllerPackage{0} != '\\'
+        $this->controllerPackage = strlen($controllerPackage) && $controllerPackage[0] != '\\'
             ? '\\' . $controllerPackage
             : $controllerPackage;
         return $this;
